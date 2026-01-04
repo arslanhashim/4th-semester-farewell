@@ -4,35 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4th Semester Farewell | Arsalan Hashim</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        :root {
-            --gold: #d4af37;
-            --white: #ffffff;
-            --glass: rgba(0, 0, 0, 0.75); /* Dark enough to read text, light enough to see BG */
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* THE BACKGROUND SYSTEM */
+        /* This part is for everyone (Desktop/Laptop) */
+.background-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('class-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    
+    /* Desktop focus is usually center */
+    background-position: 70% center; 
+}
+
+/* This part is ONLY for Mobile (Manual Adjustments) */
+@media (max-width: 600px) {
+    .background-fixed {
+        /* MANUAL CONTROL: 
+           The first number is Left/Right (X)
+           The second number is Up/Down (Y)
+        */
+        background-position: 70% 0% !important; 
+        
+        /* TIP: If your faces are being cut off at the top, 
+           lower the second percentage (e.g., 10% or 0%).
+           If faces are cut off at the bottom, increase it (e.g., 80%). */
+    }
+
+            
+            .hero h1 { font-size: 3rem !important; }
+            .glass-box { padding: 35px 20px !important; }
         }
+        /* --------------------------------------- */
 
         body {
-            /* Replace the URL below with 'class_photo.jpg' */
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                        url('class-background.jpg'); 
-            background-size: cover;
-            background-position: 70% center;
-            background-attachment: fixed;
             font-family: 'Montserrat', sans-serif;
-            color: var(--white);
-            line-height: 1.8;
+            color: #ffffff;
+            line-height: 1.6;
         }
 
-        /* Initial View */
         .hero {
             height: 100vh;
             display: flex;
@@ -45,208 +66,133 @@
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 10vw, 6rem);
-            margin-bottom: 10px;
-            text-transform: capitalize;
-            text-shadow: 2px 4px 20px rgba(0,0,0,0.6);
+            font-size: clamp(2.5rem, 10vw, 5.5rem);
+            color: #d4af37;
+            text-shadow: 2px 4px 20px rgba(0,0,0,0.8);
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--gold);
-            font-weight: 700;
-        }
-
-        /* Main Card Container */
-        .container {
+        .content-container {
             max-width: 800px;
             margin: -100px auto 100px;
             padding: 0 20px;
         }
 
-        .glass-card {
-            background: var(--glass);
-            backdrop-filter: blur(10px);
+        .glass-box {
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 60px 40px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            border-radius: 30px;
+            padding: 50px 40px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
         }
 
-        /* Section Headings with Icons */
-        .section-header {
+        .section-title {
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            color: var(--gold);
+            gap: 12px;
+            color: #d4af37;
+            margin-bottom: 15px;
         }
 
-        .section-header i {
-            font-size: 1.5rem;
-        }
+        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; }
 
-        .section-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            letter-spacing: 1px;
-        }
+        .text-block { margin-bottom: 40px; }
 
-        .content-block {
-            margin-bottom: 50px;
-        }
-
-        .apology-text {
-            border-left: 2px solid var(--gold);
-            padding-left: 20px;
-            font-style: italic;
-            color: #e2e8f0;
-        }
-
-        .party-highlight {
+        .highlight-box {
             background: rgba(212, 175, 55, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            text-align: center;
-        }
-
-        .party-highlight strong {
-            color: var(--gold);
-            font-size: 1.2rem;
-        }
-
-        /* Grid Button */
-        .memories-btn {
-            display: block;
-            width: 100%;
-            background: var(--gold);
-            color: #000;
-            border: none;
+            border-left: 4px solid #d4af37;
             padding: 20px;
+            border-radius: 0 15px 15px 0;
+            margin-top: 15px;
+        }
+
+        .btn-memories {
+            width: 100%;
+            background: #d4af37;
+            color: #000;
+            padding: 18px;
+            border: none;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1.1rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             cursor: pointer;
-            transition: 0.4s ease;
-            margin-bottom: 30px;
+            margin-top: 10px;
         }
 
-        .memories-btn:hover {
-            background: #fff;
-            transform: scale(1.02);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        /* Memories Grid */
         #photo-grid {
             display: none;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 15px;
             margin-top: 30px;
-            animation: fadeIn 0.8s ease;
         }
 
-        .grid-item {
+        .grid-img {
             width: 100%;
-            height: 200px;
+            height: 150px;
             object-fit: cover;
             border-radius: 10px;
-            border: 2px solid rgba(255,255,255,0.1);
-            transition: 0.3s;
         }
 
-        .grid-item:hover {
-            border-color: var(--gold);
-            transform: translateY(-5px);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        footer {
-            text-align: center;
-            padding: 60px 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .signature {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: 5px;
-        }
-
-        @media (max-width: 600px) {
-            .glass-card { padding: 30px 20px; }
-            .hero h1 { font-size: 3rem; }
-        }
+        footer { text-align: center; padding: 60px 20px; }
+        .signature { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: #d4af37; }
     </style>
 </head>
 <body>
 
+    <div class="background-fixed"></div>
+
     <section class="hero">
-        <p>A Journey to Remember</p>
+        <p style="letter-spacing: 5px; font-weight: 700;">MEMORIES OF</p>
         <h1>4th Semester</h1>
-        <i class="fa-solid fa-chevron-down" style="color: var(--gold); margin-top: 20px;"></i>
+        <i class="fa-solid fa-chevron-down" style="color: #d4af37; margin-top: 20px;"></i>
     </section>
 
-    <div class="container">
-        <div class="glass-card">
+    <div class="content-container">
+        <div class="glass-box">
             
-            <div class="content-block">
-                <div class="section-header">
-                    <i class="fa-solid fa-pen-nib"></i>
+            <div class="text-block">
+                <div class="section-title">
+                    <i class="fa-solid fa-feather"></i>
                     <h2>A Heartfelt Note</h2>
                 </div>
-                <p class="apology-text">
-                    "To my dear class, as we reach the end of this semester, I want to say <strong>I am truly sorry</strong> if I ever hurt anyone intentionally or unintentionally. Let's move forward with kindness and leave any grievances behind."
-                </p>
+                <p>To my dear classmates, I want to sincerely apologize if I ever caused any hurt. I've truly enjoyed this journey with you all.</p>
             </div>
 
-            <div class="content-block">
-                <div class="section-header">
+            <div class="text-block">
+                <div class="section-title">
                     <i class="fa-solid fa-glass-cheers"></i>
-                    <h2>Memories with Mam Mehrab</h2>
+                    <h2>Mam Mehrab's Party</h2>
                 </div>
-                <div class="party-highlight">
-                    <p>I really enjoyed the party of <strong>Mam Mehrab</strong>! It was a day full of joy where we actually made memories that I will carry with me forever. It was the perfect highlight of our 4th semester.</p>
+                <div class="highlight-box">
+                    The party of <strong>Mam Mehrab</strong> was where we truly became a family. I will never forget those laughs!
                 </div>
             </div>
 
-            <div class="content-block">
-                <div class="section-header">
+            <div class="text-block">
+                <div class="section-title">
                     <i class="fa-solid fa-rocket"></i>
-                    <h2>Looking Forward</h2>
+                    <h2>The Future</h2>
                 </div>
-                <p>I have learned so many things during this time, and I am eager to keep learning and growing with you all in the future. <strong>Don't stop until you're proud.</strong> May our next semester be filled with even more success and wisdom!</p>
+                <p>I learned so much this semester and I can't wait to grow even more in the future. Let's keep moving forward!</p>
             </div>
 
-            <div class="content-block">
-                <div class="section-header">
-                    <i class="fa-solid fa-circle-question"></i>
-                    <h2>One Small Request</h2>
+            <div class="text-block">
+                <div class="section-title">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <h2>Question</h2>
                 </div>
-                <p>I value your friendship. I want to know: <strong>What is one good habit you liked in me?</strong> Your words will help me stay motivated to be a better person.</p>
+                <p><strong>What is one good habit you liked in me?</strong> Your words help me improve.</p>
             </div>
 
-            <button class="memories-btn" onclick="toggleGallery()">
-                <i class="fa-solid fa-images"></i> View Semester Grid
-            </button>
+            <button class="btn-memories" onclick="toggle()">Show Memories Grid</button>
 
             <div id="photo-grid">
-                <img src="1.png.jpeg" class="grid-item">
-                <img src="2.png.jpeg" class="grid-item">
-                <img src="3.png.jpeg" class="grid-item">
-                <img src="4.jpeg" class="grid-item">
-                <img src="5.jpeg" class="grid-item">
-                <img src="6 (1).jpeg" class="grid-item">
+                <img src="https://via.placeholder.com/300" class="grid-img">
+                <img src="https://via.placeholder.com/300" class="grid-img">
+                <img src="https://via.placeholder.com/300" class="grid-img">
+                <img src="https://via.placeholder.com/300" class="grid-img">
             </div>
 
         </div>
@@ -254,20 +200,14 @@
 
     <footer>
         <div class="signature">Arsalan Hashim</div>
-        <p style="color: var(--gold); letter-spacing: 2px;">STAY BLESSED | CLASS OF 2024</p>
+        <p style="color: #d4af37; font-weight: 700;">CLASS OF 2024</p>
     </footer>
 
     <script>
-        function toggleGallery() {
-            const grid = document.getElementById('photo-grid');
-            if (grid.style.display === 'grid') {
-                grid.style.display = 'none';
-            } else {
-                grid.style.display = 'grid';
-                grid.scrollIntoView({ behavior: 'smooth' });
-            }
+        function toggle() {
+            var g = document.getElementById("photo-grid");
+            g.style.display = (g.style.display === "grid") ? "none" : "grid";
         }
     </script>
 </body>
-
 </html>
