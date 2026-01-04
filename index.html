@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th Semester Farewell | Arsalan Hashim</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --gold: #d4af37;
+            --white: #ffffff;
+            --glass: rgba(0, 0, 0, 0.75); /* Dark enough to read text, light enough to see BG */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Replace the URL below with 'class_photo.jpg' */
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('class-background.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--white);
+            line-height: 1.8;
+        }
+
+        /* Initial View */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 10vw, 6rem);
+            margin-bottom: 10px;
+            text-transform: capitalize;
+            text-shadow: 2px 4px 20px rgba(0,0,0,0.6);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* Main Card Container */
+        .container {
+            max-width: 800px;
+            margin: -100px auto 100px;
+            padding: 0 20px;
+        }
+
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        /* Section Headings with Icons */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        .section-header i {
+            font-size: 1.5rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+
+        .content-block {
+            margin-bottom: 50px;
+        }
+
+        .apology-text {
+            border-left: 2px solid var(--gold);
+            padding-left: 20px;
+            font-style: italic;
+            color: #e2e8f0;
+        }
+
+        .party-highlight {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            text-align: center;
+        }
+
+        .party-highlight strong {
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        /* Grid Button */
+        .memories-btn {
+            display: block;
+            width: 100%;
+            background: var(--gold);
+            color: #000;
+            border: none;
+            padding: 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.4s ease;
+            margin-bottom: 30px;
+        }
+
+        .memories-btn:hover {
+            background: #fff;
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Memories Grid */
+        #photo-grid {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .grid-item {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid rgba(255,255,255,0.1);
+            transition: 0.3s;
+        }
+
+        .grid-item:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .signature {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .glass-card { padding: 30px 20px; }
+            .hero h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <p>A Journey to Remember</p>
+        <h1>4th Semester</h1>
+        <i class="fa-solid fa-chevron-down" style="color: var(--gold); margin-top: 20px;"></i>
+    </section>
+
+    <div class="container">
+        <div class="glass-card">
+            
+            <div class="content-block">
+                <div class="section-header">
+                    <i class="fa-solid fa-pen-nib"></i>
+                    <h2>A Heartfelt Note</h2>
+                </div>
+                <p class="apology-text">
+                    "To my dear class, as we reach the end of this semester, I want to say <strong>I am truly sorry</strong> if I ever hurt anyone intentionally or unintentionally. Let's move forward with kindness and leave any grievances behind."
+                </p>
+            </div>
+
+            <div class="content-block">
+                <div class="section-header">
+                    <i class="fa-solid fa-glass-cheers"></i>
+                    <h2>Memories with Mam Mehrab</h2>
+                </div>
+                <div class="party-highlight">
+                    <p>I really enjoyed the party of <strong>Mam Mehrab</strong>! It was a day full of joy where we actually made memories that I will carry with me forever. It was the perfect highlight of our 4th semester.</p>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <div class="section-header">
+                    <i class="fa-solid fa-rocket"></i>
+                    <h2>Looking Forward</h2>
+                </div>
+                <p>I have learned so many things during this time, and I am eager to keep learning and growing with you all in the future. <strong>Don't stop until you're proud.</strong> May our next semester be filled with even more success and wisdom!</p>
+            </div>
+
+            <div class="content-block">
+                <div class="section-header">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <h2>One Small Request</h2>
+                </div>
+                <p>I value your friendship. I want to know: <strong>What is one good habit you liked in me?</strong> Your words will help me stay motivated to be a better person.</p>
+            </div>
+
+            <button class="memories-btn" onclick="toggleGallery()">
+                <i class="fa-solid fa-images"></i> View Semester Grid
+            </button>
+
+            <div id="photo-grid">
+                <img src="1.png.jpeg" class="grid-item">
+                <img src="2.png.jpeg" class="grid-item">
+                <img src="3.png.jpeg" class="grid-item">
+                <img src="4.jpeg" class="grid-item">
+                <img src="5.jpeg" class="grid-item">
+                <img src="6 (1).jpeg" class="grid-item">
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="signature">Arsalan Hashim</div>
+        <p style="color: var(--gold); letter-spacing: 2px;">STAY BLESSED | CLASS OF 2024</p>
+    </footer>
+
+    <script>
+        function toggleGallery() {
+            const grid = document.getElementById('photo-grid');
+            if (grid.style.display === 'grid') {
+                grid.style.display = 'none';
+            } else {
+                grid.style.display = 'grid';
+                grid.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
